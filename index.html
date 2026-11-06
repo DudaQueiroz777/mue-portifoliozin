@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Eduarda | Portfólio Criativo</title>
+  
+  <!-- Fontes do Google: Space Grotesk e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Barra de Navegação Fixa -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">duda.dev</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Alternador de Tema Escuro / Claro -->
+        <button id="themeToggle" class="theme-btn" aria-label="Alternar tema de cores" title="Mudar tema">
+          <i data-lucide="sun" class="sun-icon"></i>
+          <i data-lucide="moon" class="moon-icon"></i>
+        </button>
+
+        <a href="#contato" class="cta-nav-btn">Vamos conversar</a>
+
+        <!-- Botão Menu Mobile -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu móvel">
+          <i data-lucide="menu" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Modal de Detalhes do Projeto -->
+    <div id="projectModal" class="project-modal" aria-hidden="true" role="dialog">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-dialog">
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar modal">
+          <i data-lucide="x"></i>
+        </button>
+        <div class="modal-image-wrapper">
+          <img id="modalImg" src="" alt="Imagem do projeto" />
+        </div>
+        <div class="modal-body">
+          <div class="modal-tags" id="modalTags"></div>
+          <h3 id="modalTitle" class="modal-title">Título do Projeto</h3>
+          <p id="modalDescription" class="modal-desc">Descrição detalhada do projeto.</p>
+          <div class="modal-extra-info">
+            <div class="info-item">
+              <span class="info-label">Ano</span>
+              <span id="modalYear" class="info-value">2026</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Categoria</span>
+              <span id="modalCategory" class="info-value">UI/UX & Web</span>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <a id="modalLinkLive" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <span>Acessar Projeto Online</span>
+              <i data-lucide="external-link"></i>
+            </a>
+            <a id="modalLinkGithub" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <span>Ver no GitHub</span>
+              <i data-lucide="github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção Hero: Nome com destaque e impacto tipográfico -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-tag reveal">
+          <span class="pulse-indicator"></span>
+          <span>Disponível para novos projetos & aprendizados</span>
+        </div>
+
+        <h1 class="hero-title reveal">
+          Olá, eu sou <span class="highlight-name">Maria Eduarda</span>.
+        </h1>
+
+        <p class="hero-subtitle reveal">
+          <span class="badge-role">Estudante</span> 
+          Transformando ideias em experiências digitais criativas e autênticas.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#projetos" class="btn btn-primary">
+            <span>Ver Meus Projetos</span>
+            <i data-lucide="arrow-down-right"></i>
+          </a>
+          <a href="#sobre" class="btn btn-secondary">
+            <span>Conhecer mais</span>
+            <i data-lucide="sparkles"></i>
+          </a>
+        </div>
+
+        <!-- Elemento de rolagem decorativo -->
+        <div class="hero-scroll-hint reveal">
+          <span class="scroll-mouse"></span>
+          <span>Role para explorar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Sobre Mim -->
+    <section class="about-section section-padding" id="sobre">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">01 // Quem sou eu</span>
+          <h2 class="section-title">Sobre Mim</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-wrapper reveal">
+            <div class="image-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                alt="Foto de Maria Eduarda" 
+                class="about-img"
+              />
+              <div class="image-badge">
+                <i data-lucide="code-2"></i>
+                <span>Criando o futuro</span>
+              </div>
+            </div>
+            <div class="frame-backdrop"></div>
+          </div>
+
+          <div class="about-content reveal">
+            <h3 class="about-heading">Estudante apaixonada por design, tecnologia e novas ideias.</h3>
+            
+            <p class="about-text">
+              Muito prazer! Sou a <strong>Maria Eduarda</strong>. Atualmente dedico meus dias a estudar desenvolvimento web, design de interfaces e comunicação visual.
+            </p>
+            <p class="about-text">
+              Acredito que o bom design não deve ser apenas funcional, mas também transmitir afeto, energia e identidade única. Gosto de explorar cores vibrantes, tipografias ousadas e interfaces intuitivas que encantam quem as utiliza.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <span class="hl-number">100%</span>
+                <span class="hl-desc">Dedicação & curiosidade constante</span>
+              </div>
+              <div class="highlight-item">
+                <span class="hl-number">+10</span>
+                <span class="hl-desc">Projetos práticos e experimentos</span>
+              </div>
+              <div class="highlight-item">
+                <span class="hl-number">2026</span>
+                <span class="hl-desc">Foco em interfaces e usabilidade</span>
+              </div>
+            </div>
+
+            <div class="about-actions">
+              <a href="#contato" class="btn btn-outline">
+                <i data-lucide="send"></i> Fale Comigo
+              </a>
+              <a href="#habilidades" class="btn-text-link">
+                Ver o que estou estudando <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos com Imagens, Títulos, Tags e Links -->
+    <section class="projects-section section-padding" id="projetos">
+      <div class="container">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-tag">02 // Meus trabalhos</span>
+            <h2 class="section-title">Projetos em Destaque</h2>
+          </div>
+          <p class="section-desc">Uma seleção de trabalhos desenvolvidos com foco em criatividade, usabilidade e inovação visual.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projeto 1: RPG Personagens -->
+          <article class="project-card reveal" data-project-id="1">
+            <div class="project-image-box">
+              <img 
+                src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=900&q=80" 
+                alt="RPG Personagens" 
+                class="project-img"
+              />
+              <div class="project-overlay">
+                <button class="project-link-btn open-modal-trigger" data-project-id="1" title="Visualizar Detalhes">
+                  <i data-lucide="maximize-2"></i>
+                </button>
+                <a href="https://github.com/DudaQueiroz777/RPG-personagens" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="Código Fonte no GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Game Dev</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">RPG</span>
+              </div>
+              <h3 class="project-title">RPG - Personagens</h3>
+              <p class="project-description">
+                Aplicação focada em criação, customização e gerenciamento de fichas de personagens de RPG, com atributos dinâmicos e inventário interativo.
+              </p>
+              <button class="project-footer-link open-modal-trigger" data-project-id="1">
+                <span>Ver detalhes do projeto</span>
+                <i data-lucide="arrow-up-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Projeto 2: Enva -->
+          <article class="project-card reveal" data-project-id="2">
+            <div class="project-image-box">
+              <img 
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80" 
+                alt="Projeto Enva" 
+                class="project-img"
+              />
+              <div class="project-overlay">
+                <button class="project-link-btn open-modal-trigger" data-project-id="2" title="Visualizar Detalhes">
+                  <i data-lucide="maximize-2"></i>
+                </button>
+                <a href="https://github.com/DudaQueiroz777/enva" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="Código Fonte no GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Web Design</span>
+                <span class="tag">Sustentabilidade</span>
+                <span class="tag">Frontend</span>
+              </div>
+              <h3 class="project-title">Enva</h3>
+              <p class="project-description">
+                Projeto interativo com temática ambiental e ecológica, combinando interface visual leve, dados e conscientização sustentável.
+              </p>
+              <button class="project-footer-link open-modal-trigger" data-project-id="2">
+                <span>Ver detalhes do projeto</span>
+                <i data-lucide="arrow-up-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Projeto 3: Mano se Vira -->
+          <article class="project-card reveal" data-project-id="3">
+            <div class="project-image-box">
+              <img 
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" 
+                alt="Projeto Mano Se Vira" 
+                class="project-img"
+              />
+              <div class="project-overlay">
+                <button class="project-link-btn open-modal-trigger" data-project-id="3" title="Visualizar Detalhes">
+                  <i data-lucide="maximize-2"></i>
+                </button>
+                <a href="https://github.com/DudaQueiroz777/manosevira" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="Código Fonte no GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Aplicação Web</span>
+                <span class="tag">Utilidades</span>
+                <span class="tag">Interatividade</span>
+              </div>
+              <h3 class="project-title">Mano Se Vira</h3>
+              <p class="project-description">
+                Solução criativa e descontraída desenvolvida para auxiliar tarefas do cotidiano, com navegação intuitiva e foco em praticidade.
+              </p>
+              <button class="project-footer-link open-modal-trigger" data-project-id="3">
+                <span>Ver detalhes do projeto</span>
+                <i data-lucide="arrow-up-right"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Habilidades / Conhecimentos -->
+    <section class="skills-section section-padding" id="habilidades">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">03 // Ferramentas & Tecnologias</span>
+          <h2 class="section-title">O Que Eu Domino & Estudo</h2>
+        </div>
+
+        <div class="skills-grid reveal">
+          <div class="skill-card">
+            <div class="skill-icon"><i data-lucide="code"></i></div>
+            <h4>Desenvolvimento Web</h4>
+            <p>HTML5 semântico, CSS3 moderno (Flexbox & Grid), JavaScript interativo e responsividade mobile-first.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i data-lucide="palette"></i></div>
+            <h4>UI / UX Design</h4>
+            <p>Criação de protótipos navegáveis, wireframes, paletas de cores harmônicas e pesquisa de usabilidade.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i data-lucide="figma"></i></div>
+            <h4>Figma & Ferramentas</h4>
+            <p>Componentização de interfaces, tokens de design, sistemas de grids e assets visuais dinâmicos.</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon"><i data-lucide="lightbulb"></i></div>
+            <h4>Criatividade & Inovação</h4>
+            <p>Resolução prática de problemas, prototipação rápida de ideias e pensamento centrado no usuário.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato com Validação de Formulário -->
+    <section class="contact-section section-padding" id="contato">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="contact-info">
+            <span class="section-tag">04 // Fale comigo</span>
+            <h2 class="contact-title">Tem uma ideia ou quer bater um papo?</h2>
+            <p class="contact-subtitle">
+              Estou sempre animada para trocar experiências, participar de projetos colaborativos e aprender novidades. Envie uma mensagem!
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <i data-lucide="mail"></i>
+                <div>
+                  <span class="detail-label">Gmail</span>
+                  <a href="mailto:queirozduda546@gmail.com" class="detail-val">queirozduda546@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <i data-lucide="map-pin"></i>
+                <div>
+                  <span class="detail-label">Localização</span>
+                  <span class="detail-val">Brasil (Remoto / Presencial)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com/DudaQueiroz777" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <i data-lucide="github"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <i data-lucide="linkedin"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                <i data-lucide="instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form" novalidate>
+              <!-- Mensagem de Sucesso / Feedback -->
+              <div id="formSuccess" class="form-feedback-alert success-alert" style="display: none;">
+                <i data-lucide="check-circle-2"></i>
+                <div>
+                  <strong>Mensagem enviada com sucesso!</strong>
+                  <p>Obrigada pelo contato, Maria Eduarda responderá em breve.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="nome">Seu Nome *</label>
+                <div class="input-wrapper">
+                  <i data-lucide="user" class="input-icon"></i>
+                  <input type="text" id="nome" name="nome" placeholder="Como posso te chamar?" required />
+                </div>
+                <span class="error-msg" id="nomeError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Seu Gmail / E-mail *</label>
+                <div class="input-wrapper">
+                  <i data-lucide="at-sign" class="input-icon"></i>
+                  <input type="email" id="email" name="email" placeholder="seuemail@gmail.com" required />
+                </div>
+                <span class="error-msg" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="assunto">Assunto</label>
+                <div class="input-wrapper">
+                  <i data-lucide="message-square" class="input-icon"></i>
+                  <input type="text" id="assunto" name="assunto" placeholder="Ex: Proposta de projeto ou mentoria" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="mensagem">Mensagem *</label>
+                <div class="input-wrapper text-area-wrapper">
+                  <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui sua mensagem..." required></textarea>
+                </div>
+                <span class="error-msg" id="mensagemError"></span>
+              </div>
+
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-submit">
+                <span>Enviar Mensagem</span>
+                <i data-lucide="send"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">Maria Eduarda</span>
+        <span class="footer-copy">© 2026. Todos os direitos reservados. Feito com paixão & código.</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+          <span>Voltar ao topo</span>
+          <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
